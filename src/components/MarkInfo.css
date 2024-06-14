@@ -1,0 +1,32 @@
+
+.markinfo__header {
+  margin-top: 20px;
+  width: 100%;
+  border-top: 3px solid #686C5E;
+  padding-top: 5px;
+}
+
+.markinfo__list {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.markinfo__item {
+  margin-top: 10px;   
+}
+
+.markinfo__item-span {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color:#686C5E;
+}
+
+.markinfo__error {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  color:#686C5E;
+  margin-top: 40px;
+  margin-left: 25px; 
+}
