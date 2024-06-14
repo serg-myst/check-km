@@ -6,7 +6,7 @@ import Info from './Info';
 function MarkInfo ({mark}) {
   const [data, setData] = useState([]);
 
-  const url = 'http://192.168.56.98:7009/marks-info/';
+  const url = import.meta.env.VITE_API_URL;
 
   const body = {
     'mark': `${mark}`
