@@ -1,0 +1,26 @@
+version: "3.9"
+
+networks:
+  traefik-public:
+    external: true
+
+services:
+  check-km:
+    image: check-km
+    command: nginx -g 'daemon off;'
+    networks:
+      - traefik-public
+    deploy:
+      replicas: 2
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.check-km.rule=Host(`check-km.itv34.ru`) && (ClientIP(`192.168.57.0/24`) || ClientIP(`192.168.56.0/24`) || ClientIP(`192.168.65.0/24`))"
+        - "traefik.http.routers.check-km.entrypoints=http"
+        - "traefik.http.routers.check-km.middlewares=https-redirect"
+        - "traefik.http.routers.check-km-https.rule=Host(`check-km.itv34.ru`) && (ClientIP(`192.168.57.0/24`) || ClientIP(`192.168.56.0/24`) || ClientIP(`192.168.65.0/24`))"
+        - "traefik.http.routers.check-km-https.entrypoints=https"
+        - "traefik.http.routers.check-km-https.tls=true"
+        - "traefik.http.routers.check-km-https.tls.certresolver=le"
+        - "traefik.docker.network=traefik-public"
+        - "traefik.constraint-label=traefik-public"
+        - "traefik.http.services.check-km-https.loadbalancer.server.port=8080"
