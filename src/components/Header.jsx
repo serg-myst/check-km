@@ -15,9 +15,6 @@ function Header() {
             <li>
               <p>Сервис для получения информации по акцизным маркам</p>
             </li>
-            <li>
-              <CurrentTime />
-            </li>
           </ul>   
         </div>
       </div>
