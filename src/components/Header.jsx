@@ -13,7 +13,7 @@ function Header() {
               <img className="header__list-img" src={cz} alt='photo'></img>
             </li>
             <li>
-              <p>Сервис для получения информации по акцизным маркам</p>
+              <p>Сервис для получения информации по кодам маркировки</p>
             </li>
           </ul>   
         </div>
