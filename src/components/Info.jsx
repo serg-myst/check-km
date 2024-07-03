@@ -81,6 +81,10 @@ function Info({data}) {
     return <p className="markinfo__error">Ошибка: {data.status}. {data.details} !</p>
   }
 
+  if (status === 500) {
+    return <p className="markinfo__error">Ошибка: {data.status}. {data.details} !</p>
+  }
+
 }
 
 export default Info;
