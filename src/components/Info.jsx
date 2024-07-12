@@ -32,16 +32,16 @@ function Info({data}) {
           <span className="markinfo__item-span">Вид эмиссии:</span> {data.data.emissionType}
         </li>
         <li className="markinfo__item">
-          <span className="markinfo__item-span">Дата эмисcии:</span> {moment(data.data.emissionDate).format('DD.MM.YYYY HH:mm:ss')}
+          <span className="markinfo__item-span">Дата эмисcии:</span> {typeof(data.data.emissionDate) === 'undefined' ? '-': moment(data.data.emissionDate).format('DD.MM.YYYY HH:mm:ss')}
         </li>
         <li className="markinfo__item">
-          <span className="markinfo__item-span">Дата нанесения:</span> {moment(data.data.applicationDate).format('DD.MM.YYYY HH:mm:ss')}
+          <span className="markinfo__item-span">Дата нанесения:</span> {typeof(data.data.applicationDate) === 'undefined' ? '-': moment(data.data.applicationDate).format('DD.MM.YYYY HH:mm:ss')}
         </li>
          <li className="markinfo__item">
-          <span className="markinfo__item-span">Дата ввода в оборот:</span> {moment(data.data.introducedDate).format('DD.MM.YYYY HH:mm:ss')}
+          <span className="markinfo__item-span">Дата ввода в оборот:</span> {typeof(data.data.introducedDate) === 'undefined' ? '-': moment(data.data.introducedDate).format('DD.MM.YYYY HH:mm:ss')}
         </li>
       <li className="markinfo__item">
-          <span className="markinfo__item-span">Срок годности:</span> {moment(data.data.expirationDate).format('DD.MM.YYYY HH:mm:ss')}
+          <span className="markinfo__item-span">Срок годности:</span> {typeof(data.data.expirationDate) === 'undefined' ? '-': moment(data.data.expirationDate).format('DD.MM.YYYY HH:mm:ss')}
         </li>
         <li className="markinfo__item">
           <span className="markinfo__item-span">Товарная упаковка:</span> {data.data.generalPackageType}
